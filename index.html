@@ -7,16 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="arena">
+    <div id="game-wrapper">
+      <div id="controls">
+        <button onclick="spawnRuby()">Спавн рубина</button>
+      </div>
+      <div id="scoreboard">
+        <span id="score-chatgpt">ChatGPT: 0</span>
+        <span id="score-deepseek">DeepSeek: 0</span>
+      </div>
+      <div id="arena">
+        <div id="ruby"></div>
         <div class="bot chatgpt">
-            <img src="img/chatgpt.png" alt="ChatGPT">
-          </div>
-          <div class="bot deepseek">
-            <img src="img/deepseek.png" alt="DeepSeek">
-          </div>          
+          <img src="img/chatgpt.png" alt="ChatGPT">
+        </div>
+        <div class="bot deepseek">
+          <img src="img/deepseek.png" alt="DeepSeek">
+        </div>
+      </div>
     </div>
+  
     <script src="script.js"></script>
     <script src="chatgpt.js"></script>
-    <script src="deepseek.js"></script>    
-</body>
+    <script src="deepseek.js"></script>
+  </body>  
 </html>

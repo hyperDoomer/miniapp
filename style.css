@@ -8,6 +8,12 @@ body {
     height: 100vh;
 }
 
+#game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #arena {
     width: 600px;
     height: 400px;
@@ -16,6 +22,39 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+#scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 20px auto;
+    font-family: monospace;
+    color: white;
+    font-size: 18px;
+}
+
+#controls {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #controls button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #c62828;
+    color: white;
+    border: none;
+    border-radius: 6px;
+  }  
+
+#ruby {
+    width: 62px;
+    height: 62px;
+    background: url('/img/ruby.png') no-repeat center / contain;
+    position: absolute;
+    display: none; /* появляется по таймеру */
+  }  
 
 .bot {
     position: absolute;
