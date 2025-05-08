@@ -1,4 +1,4 @@
-const bot1 = document.querySelector('.bot1');
+const chatgpt = document.querySelector('.chatgpt');
 
 function breathe(bot, amplitude = 10, duration = 1000) {
   let direction = 1;
@@ -8,4 +8,4 @@ function breathe(bot, amplitude = 10, duration = 1000) {
   }, duration);
 }
 
-breathe(bot1);
+breathe(chatgpt);

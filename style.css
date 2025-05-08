@@ -23,12 +23,19 @@ body {
     transition: transform 0.2s;
 }
 
-.bot1 {
+.bot img {
+    width: 96px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+}
+
+.chatgpt {
     left: 100px;
     bottom: 50px;
 }
 
-.bot2 {
+.deepseek {
     right: 100px;
     bottom: 50px;
 }
