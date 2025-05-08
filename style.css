@@ -23,22 +23,29 @@ body {
     overflow: hidden;
 }
 
-#scoreboard {
+#controls {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 600px;
-    margin: 20px auto;
+    margin-bottom: 10px;
     font-family: monospace;
     color: white;
-    font-size: 18px;
-}
-
-#controls {
-    text-align: center;
-    margin-bottom: 10px;
   }
   
-  #controls button {
+  .score {
+    display: none;
+    font-size: 18px;
+    min-width: 100px;
+    text-align: center;
+  }  
+  
+  #buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  #buttons button {
     padding: 8px 16px;
     font-size: 16px;
     cursor: pointer;
@@ -53,7 +60,7 @@ body {
     height: 62px;
     background: url('/img/ruby.png') no-repeat center / contain;
     position: absolute;
-    display: none; /* появляется по таймеру */
+    display: none;
   }  
 
 .bot {
@@ -75,6 +82,6 @@ body {
 }
 
 .deepseek {
-    right: 100px;
+    left: 400px;
     bottom: 50px;
 }

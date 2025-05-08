@@ -1,6 +1,9 @@
 let scoreChatGPT = 0;
 let scoreDeepSeek = 0;
 
+let rubyInterval = null;
+let scoreShown = false;
+
 function spawnRuby() {
   const arena = document.getElementById('arena');
   const ruby = document.getElementById('ruby');
@@ -34,15 +37,12 @@ function checkCollection() {
   const chatgpt = document.querySelector('.chatgpt img').getBoundingClientRect();
   const deepseek = document.querySelector('.deepseek img').getBoundingClientRect();
 
-  const threshold = 79;
+  const threshold = 110;
 
-  // ✅ Получаем центры
   const rubyCenterX = rRect.x + rRect.width / 2;
   const rubyCenterY = rRect.y + rRect.height / 2;
-
   const chatgptCenterX = chatgpt.x + chatgpt.width / 2;
   const chatgptCenterY = chatgpt.y + chatgpt.height / 2;
-
   const deepseekCenterX = deepseek.x + deepseek.width / 2;
   const deepseekCenterY = deepseek.y + deepseek.height / 2;
 
@@ -60,8 +60,28 @@ function checkCollection() {
   }
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
   updateScore();
   setInterval(checkCollection, 200);
+
+  const startButton = document.getElementById('start-button');
+  const stopButton = document.getElementById('stop-button');
+  const scores = document.querySelectorAll('.score');
+
+  startButton.addEventListener('click', () => {
+    if (!scoreShown) {
+      scores.forEach(el => el.style.display = 'block');
+      scoreShown = true;
+    }    
+
+    if (!rubyInterval) {
+      spawnRuby();
+      rubyInterval = setInterval(spawnRuby, 2000);
+    }
+  });
+
+  stopButton.addEventListener('click', () => {
+    clearInterval(rubyInterval);
+    rubyInterval = null;
+  });
 });
