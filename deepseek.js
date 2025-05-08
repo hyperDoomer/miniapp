@@ -1,4 +1,4 @@
-const chatgpt = document.querySelector('.deepseek');
+const deepseek = document.querySelector('.deepseek');
 
 function breathe(bot, amplitude = 10, duration = 1000) {
   let direction = 1;
@@ -8,4 +8,4 @@ function breathe(bot, amplitude = 10, duration = 1000) {
   }, duration);
 }
 
-breathe(chatgpt);
+breathe(deepseek);
